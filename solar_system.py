@@ -60,12 +60,12 @@ def showComets():
 def mainMenu():
     while True:
         print("\n:::: MAIN MENU ::::")
-        print("1. Planetas")
+        print("1. Planets")
         print("2. Moons")
-        print("3. Cometas")
+        print("3. Comets")
         print("4. Stars")
         print("5. Asteroid")
-        print("6. Salir")
+        print("6. Exit")
 
         choice = input("Seleccione una opción: ")
         if choice == "1":
