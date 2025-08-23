@@ -36,6 +36,20 @@ def showMoons():
         if b.get("aroundPlanet"):
             print("-", b["englishName"])
 
+def showStars():
+    url = "https://api.le-systeme-solaire.net/rest/bodies/?filter[]=isComet,eq,true"
+    data = requests.get(url).json()
+    print("\n::: STARS :::")
+    for b in data.get("bodies", []):
+        print("-", b["englishName"])
+
+def showAsteroid():
+    url = "https://api.le-systeme-solaire.net/rest/bodies/?filter[]=isComet,eq,true"
+    data = requests.get(url).json()
+    print("\n::: ASTEROID :::")
+    for b in data.get("bodies", []):
+        print("-", b["englishName"])
+
 def showComets():
     url = "https://api.le-systeme-solaire.net/rest/bodies/?filter[]=isComet,eq,true"
     data = requests.get(url).json()
@@ -47,9 +61,11 @@ def mainMenu():
     while True:
         print("\n:::: MAIN MENU ::::")
         print("1. Planetas")
-        print("2. Satélites")
+        print("2. Moons")
         print("3. Cometas")
-        print("4. Salir")
+        print("4. Stars")
+        print("5. Asteroid")
+        print("6. Salir")
 
         choice = input("Seleccione una opción: ")
         if choice == "1":
@@ -59,6 +75,10 @@ def mainMenu():
         elif choice == "3":
             showComets()
         elif choice == "4":
+            showStars()
+        elif choice == "5":
+            showAsteroid()        
+        elif choice == "6":
             print("Saliendo...")
             break
         else:
