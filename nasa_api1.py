@@ -11,7 +11,7 @@ import requests
 os.system('clear')
 def get_nasa_data(api_key):
     print(":: NASA INFORMATION ::")
-    url = f"https://api.nasa.gov/neo/rest/v1/neo/3726712?api_key={api_key}"
+    url = f"https://api.nasa.gov/neo/rest/v1/neo/3726712?api_key={api_key}" 
     try: 
         #API request
         response = requests.get(url)
