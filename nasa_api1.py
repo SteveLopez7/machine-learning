@@ -18,6 +18,15 @@ def get_nasa_data(api_key):
         response.raise_for_status()
         data = response.json()
         print(data)
+        name = data.get("name")
+        abs_magnitude = data.get("absolute_magnitude_h")
+        diam_km = data["estimated_diameter"]["kilometers"]["estimated_diameter_max"]
+        diam_ft = data["estimated_diameter"]["feet"]["estimated_diameter_max"]
+        print(f"Nombre del cometa: {name}")
+        print(f"Magnitud absoluta h: {abs_magnitude}")
+        print(f"Diámetro máximo estimado (km): {diam_km}")
+        print(f"Diámetro máximo estimado (ft): {diam_ft}")
+
     except requests.exceptions.RequestException as e:
         print(f"requests error: {e}")
     
